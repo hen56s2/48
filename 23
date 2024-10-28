@@ -1,6 +1,4 @@
-if getgenv().AutoMenu then
-    print("AutoMenu is enabled.")
-    
+if getgenv().AutoMenu then    
     local args = {
         [1] = {
             [1] = {
