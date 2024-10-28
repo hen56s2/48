@@ -1,4 +1,6 @@
+-- Check if AutoMenu is enabled
 if getgenv().AutoMenu then    
+    -- Step 1: Execute various server calls
     local args = {
         [1] = {
             [1] = {
@@ -50,12 +52,19 @@ if getgenv().AutoMenu then
     
     wait(0.9)
     
+    -- Step 2: Load and run the external script
+    print("Attempting to load external script...")
+    
+    local version = os.time()  -- Prevent caching
     local success, err = pcall(function()
-loadstring(game:HttpGet("https://raw.githubusercontent.com/OhhMyGehlee/Best/main/Dungeon"))()
-end)
+        loadstring(game:HttpGet("https://raw.githubusercontent.com/OhhMyGehlee/Best/main/Dungeon?version=" .. version))()
+    end)
 
+    -- Step 3: Check if the loadstring was successful
     if not success then
         print("Error loading script: ", err)
+    else
+        print("Script loaded successfully.")
     end
 else
     print("AutoMenu is not enabled.")
