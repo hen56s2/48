@@ -53,8 +53,8 @@ if getgenv().AutoMenu then
     wait(0.9)
     
     local success, err = pcall(function()
-        loadstring(game:HttpGet("https://raw.githubusercontent.com/123/Best/main/123"))()
-    end)
+loadstring(game:HttpGet("https://raw.githubusercontent.com/OhhMyGehlee/Best/main/Dungeon"))()
+end)
 
     if not success then
         print("Error loading script: ", err)
